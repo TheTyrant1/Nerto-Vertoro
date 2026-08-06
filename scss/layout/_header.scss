@@ -17,7 +17,7 @@
   &__logo {
     position: absolute;
     left: $container-padding;
-    top: 10px;
+    top: 7px;
     font-size: 21px;
     font-weight: 700;
     line-height: 1.43;
@@ -27,7 +27,7 @@
   &__address {
     position: absolute;
     right: 671px;
-    top: 3px;
+    top: 13px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -50,7 +50,7 @@
   &__phone {
     position: absolute;
     left: 1319px;
-    top: 0;
+    top: 4px;
     display: flex;
     align-items: center;
     gap: 15px;

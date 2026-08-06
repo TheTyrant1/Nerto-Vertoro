@@ -42,6 +42,6 @@ export class ReviewsSlider {
     const cardCenter = cardStart + widths[this.currentIndex] / 2;
     const translateX = cardCenter - 960;
 
-    this.track.style.transform = `translateX(-${translateX}px)`;
+    this.track.style.transform = `translateX(${-translateX}px)`;
   }
 }
