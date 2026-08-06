@@ -1,0 +1,249 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.reviews {
+  position: relative;
+  height: 1505px;
+  background-color: $color-navy;
+  overflow: hidden;
+
+  &__cloud-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 330px;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &__cloud-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1920px;
+    height: 284px;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &__title {
+    @include heading-48;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 306px;
+    width: $content-width;
+    text-align: center;
+    color: $color-white;
+    z-index: 3;
+  }
+
+  &__slider {
+    position: absolute;
+    left: 0;
+    top: 446px;
+    width: 100%;
+    height: 751px;
+    overflow: hidden;
+    z-index: 3;
+  }
+
+  &__track {
+    display: flex;
+    gap: 50px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+
+  &__nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    display: flex;
+    gap: 0;
+    z-index: 4;
+  }
+
+  &__arrow {
+    width: 66px;
+    height: 66px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+
+    &--leaf {
+      width: 177.62px;
+      height: 175.68px;
+      left: 192px;
+      top: 270px;
+      transform: rotate(-120deg);
+      @include decor-blur(13.5px);
+
+      img {
+        width: 126.68px;
+        height: 131.96px;
+      }
+    }
+
+    &--berry {
+      width: 217.81px;
+      height: 217.73px;
+      right: -130px;
+      top: 140px;
+      transform: rotate(-134.21deg);
+
+      img {
+        width: 152px;
+        height: 156px;
+      }
+    }
+  }
+}
+
+.review-card {
+  flex-shrink: 0;
+  display: flex;
+  gap: 54px;
+  background: $color-white;
+  border: 2px solid $color-gray-10;
+  border-radius: 5px;
+  box-shadow: $shadow-card;
+  padding: 70px 143px;
+  width: 1180px;
+  transition: opacity 0.4s, transform 0.4s;
+
+  &--side {
+    opacity: 0.1;
+    padding: 55px 113px;
+    gap: 43px;
+    border-width: 1.583px;
+    box-shadow: 1.583px 6.332px 12.664px rgba(194, 198, 208, 0.06);
+    width: 934px;
+  }
+
+  &__quote {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    .review-card--side & {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+
+    .review-card--side & {
+      gap: 19px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .review-card--side & {
+      gap: 19px;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.43;
+    color: $color-gray-1;
+    width: 460px;
+
+    .review-card--side & {
+      font-size: 24px;
+      width: 364px;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-gray-1;
+    width: 430px;
+
+    .review-card--side & {
+      font-size: 12px;
+      width: 340px;
+    }
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+
+    .review-card--side & {
+      gap: 24px;
+    }
+  }
+
+  &__avatar {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid $color-gray-11;
+
+    .review-card--side & {
+      width: 301px;
+      height: 301px;
+      border-width: 0.792px;
+    }
+  }
+
+  &__name {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.43;
+    color: $color-gray-1;
+    text-align: center;
+
+    .review-card--side & {
+      font-size: 17px;
+    }
+  }
+
+  &__location {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-gray-7;
+    text-align: center;
+
+    .review-card--side & {
+      font-size: 13px;
+    }
+  }
+}

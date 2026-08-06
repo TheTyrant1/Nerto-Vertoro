@@ -1,0 +1,43 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.gallery {
+  position: relative;
+  height: 1545px;
+  background-color: $color-white;
+  overflow: hidden;
+
+  &__title {
+    @include heading-48;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2px;
+    text-align: center;
+    color: $color-gray-1;
+    white-space: nowrap;
+  }
+
+  &__grid {
+    position: absolute;
+    top: 191px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    align-items: center;
+  }
+
+  &__row {
+    display: flex;
+    gap: 9px;
+  }
+
+  &__photo {
+    width: 634px;
+    height: 444px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+}

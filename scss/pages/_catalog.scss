@@ -1,0 +1,143 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.catalog {
+  position: relative;
+  min-height: 1926px;
+  background-color: $color-white;
+  padding-bottom: 60px;
+  overflow: hidden;
+
+  &__title {
+    @include heading-48;
+    text-align: center;
+    color: $color-gray-1;
+    padding-top: 0;
+    margin-bottom: 80px;
+    height: 60px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__grid {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__row {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__decor {
+    position: absolute;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--berry {
+      width: 231.52px;
+      height: 229.72px;
+      left: 214px;
+      top: 228px;
+      transform: rotate(-63.54deg);
+      @include decor-blur(6.5px);
+
+      img {
+        width: 170px;
+        height: 174px;
+      }
+    }
+
+    &--leaf-1 {
+      width: 161px;
+      height: 167px;
+      left: 1523px;
+      top: 1025px;
+      transform: rotate(180deg);
+      @include decor-blur(13.5px);
+    }
+
+    &--leaf-2 {
+      width: 117.84px;
+      height: 113.97px;
+      left: 252px;
+      top: 1381px;
+      transform: rotate(92.61deg);
+      @include decor-blur(13.5px);
+
+      img {
+        width: 108.93px;
+        height: 112.99px;
+      }
+    }
+  }
+}
+
+.product-card {
+  width: 380px;
+  flex-shrink: 0;
+  filter: drop-shadow($shadow-card-sm);
+
+  &__image {
+    width: 380px;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  &__body {
+    background: $color-white;
+    border: 1px solid $color-gray-11;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 50px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.43;
+    color: $color-gray-1;
+    width: 247px;
+  }
+
+  &__desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color-gray-1;
+    width: 240px;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $color-gray-2;
+    white-space: nowrap;
+  }
+}

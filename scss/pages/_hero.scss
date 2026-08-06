@@ -1,0 +1,126 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+  position: relative;
+  height: 1294px;
+  background-color: $color-navy;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 1295px;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  &__content {
+    position: absolute;
+    left: $container-padding;
+    top: 307px;
+    width: 647px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 2;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -1px;
+    color: $color-white;
+    width: 647px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.43;
+    color: $color-white;
+    width: 544px;
+    margin-top: 24px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__note {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color-white;
+    width: 210px;
+  }
+
+  &__decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--berry-1 {
+      width: 232.67px;
+      height: 234.7px;
+      right: -70px;
+      top: 109px;
+      transform: rotate(28.32deg);
+
+      img {
+        width: 170px;
+        height: 175px;
+      }
+    }
+
+    &--berry-2 {
+      width: 280.77px;
+      height: 280.75px;
+      left: -95px;
+      top: 202px;
+      transform: rotate(-45.17deg);
+
+      img {
+        width: 195.65px;
+        height: 201.41px;
+      }
+    }
+
+    &--berry-3 {
+      width: 272.05px;
+      height: 273.95px;
+      left: 1474px;
+      top: 871px;
+      transform: rotate(-148.51deg);
+
+      img {
+        width: 195.65px;
+        height: 201.41px;
+      }
+    }
+
+    &--leaf {
+      width: 366.45px;
+      height: 372.13px;
+      left: -114px;
+      top: 922px;
+      transform: rotate(-156.42deg);
+      @include decor-blur(6.5px);
+
+      img {
+        width: 275px;
+        height: 286px;
+      }
+    }
+  }
+}

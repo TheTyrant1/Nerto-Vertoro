@@ -1,0 +1,218 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.order {
+  position: relative;
+  height: 912px;
+  background-color: $color-navy;
+  overflow: hidden;
+
+  &__cloud-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 284px;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &__form-wrap {
+    position: absolute;
+    left: $container-padding;
+    top: 300px;
+    width: $content-width;
+    z-index: 3;
+  }
+
+  &__form {
+    background: $color-white;
+    border-radius: 8px;
+    padding: 70px 99px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.33;
+    color: $color-gray-1;
+    width: 902px;
+  }
+
+  &__subtitle {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: -0.2px;
+    color: $color-gray-1;
+    width: 880px;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__input-wrap {
+    position: relative;
+    width: 380px;
+    height: 85px;
+    background-color: $color-gray-11;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input-icon {
+    position: absolute;
+    left: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding-left: 58px;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color-gray-1;
+
+    &::placeholder {
+      color: $color-gray-5;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  &__checkbox-icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  &__checkbox-text {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: $color-gray-5;
+    white-space: nowrap;
+  }
+
+  &__footer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 118px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color-gray-5;
+    z-index: 3;
+  }
+
+  &__copyright {
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--berry-1 {
+      width: 210.95px;
+      height: 212.22px;
+      right: 226px;
+      top: 194px;
+      transform: rotate(31.18deg);
+
+      img {
+        width: 152.18px;
+        height: 155.97px;
+      }
+    }
+
+    &--berry-2 {
+      width: 237.5px;
+      height: 236.7px;
+      left: 187px;
+      top: 595px;
+      transform: rotate(-127.23deg);
+
+      img {
+        width: 167.13px;
+        height: 171.29px;
+      }
+    }
+
+    &--leaf-1 {
+      width: 183.9px;
+      height: 179.03px;
+      right: 221px;
+      top: 632px;
+      transform: rotate(76.12deg);
+      @include decor-blur(6.5px);
+
+      img {
+        width: 146.55px;
+        height: 153.21px;
+      }
+    }
+
+    &--leaf-2 {
+      width: 120.3px;
+      height: 115.88px;
+      left: 274px;
+      top: 226px;
+      transform: rotate(-94.95deg);
+      @include decor-blur(6.5px);
+
+      img {
+        width: 106.67px;
+        height: 111.52px;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
+@use 'base/reset';
+@use 'base/typography';
+
+@use 'layout/page';
+@use 'layout/header';
+
+@use 'components/button';
+
+@use 'pages/hero';
+@use 'pages/catalog';
+@use 'pages/custom-order';
+@use 'pages/reviews';
+@use 'pages/gallery';
+@use 'pages/order';
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
