@@ -1,0 +1,9 @@
+services:
+  nginx:
+    container_name: nerto-vertoro_nginx_prod
+    build:
+      context: .
+      dockerfile: _docker/prod/app/Dockerfile
+    ports:
+      - "80:80"
+    restart: always

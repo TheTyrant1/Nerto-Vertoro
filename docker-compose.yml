@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: nerto-vertoro_node
+    build:
+      context: .
+      dockerfile: _docker/local/app/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
